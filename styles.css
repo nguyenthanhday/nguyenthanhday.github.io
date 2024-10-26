@@ -1,0 +1,59 @@
+/* Blob background */
+.blob {
+    background: linear-gradient(135deg, #72edf2 10%, #5151e5 100%);
+    padding: 2rem;
+    border-radius: 50px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.blob:before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 10%, transparent 50%);
+    animation: blobAnimation 10s infinite;
+    transform: translate(-50%, -50%);
+}
+
+/* Animation for blob */
+@keyframes blobAnimation {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); }
+    50% { transform: translate(-45%, -45%) scale(1.1); }
+}
+
+/* Alternating layout */
+.alternating-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.alternating-section .blob:nth-child(even) {
+    align-self: flex-end;
+}
+
+/* Additional Styling for Sections */
+h2 {
+    color: #333;
+    font-weight: bold;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    margin: 0.5rem 0;
+}
+
+.blob ul {
+    color: #fff;
+}
